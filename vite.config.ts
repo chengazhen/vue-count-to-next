@@ -1,4 +1,3 @@
-import { fileURLToPath, URL } from 'url'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -6,10 +5,9 @@ import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    // outDir: 'dist/src/',
     lib: {
-      entry: resolve(__dirname, 'src/index'),
-      name: 'vue-count-to-next',
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'vue-count-to-vite',
       fileName: 'index'
     },
     rollupOptions: {
@@ -23,10 +21,18 @@ export default defineConfig({
       }
     }
   },
-  plugins: [vue(), dts()],
+  plugins: [
+    vue(),
+    dts({
+      outputDir: 'types',
+      cleanVueFileName: true
+    })
+  ],
   resolve: {
+    // alias: [{ find: /^@\/(.+)/, replacement: resolve(__dirname, '$1') }]
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': resolve(__dirname),
+      '@components': resolve(__dirname, 'src/components')
     }
   }
 })

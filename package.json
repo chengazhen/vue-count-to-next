@@ -1,15 +1,16 @@
 {
-  "name": "vue-count-to-next",
-  "version": "0.0.0",
+  "name": "vue-count-to-vite",
+  "version": "0.0.4",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
-  "main": "./dist/vue-count-to-next.umd.js",
-  "module": "./dist/vue-count-to-next.es.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-count-to-next.es.js",
-      "require": "./dist/vue-count-to-next.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     }
   },
   "scripts": {
@@ -20,8 +21,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "vue": "^3.2.31",
-    "vue-count-to": "^1.0.13"
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
@@ -35,5 +35,6 @@
     "vite": "^2.8.4",
     "vite-plugin-dts": "^0.9.9",
     "vue-tsc": "^0.31.4"
-  }
+  },
+  "types": "./types/src/index.d.ts"
 }
