@@ -1,6 +1,6 @@
 {
   "name": "vue-count-to-vite",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -43,5 +43,6 @@
     "type": "git",
     "url": "https://github.com/azhen98/vue-count-to-next"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://azhen98.github.io/vue-count-to-next/"
 }
