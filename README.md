@@ -1,6 +1,10 @@
 # vue-count-to-vite
 
-一个用 vite 打包的 vue 插件 vue3.0 组件
+一个用 vite 打包的 vue 插件 vue3.0 组件, 基于潘佳辰的 2.0 组件改造而来
+
+### 预览
+
+[在线地址](https://azhen98.github.io/vue-count-to-next/)
 
 ### How to use?
 
@@ -8,7 +12,7 @@
 npm install vue-count-to-vite
 ```
 
-### Example
+### npm 安装使用
 
 ```vue
 <template>
@@ -29,7 +33,9 @@ export default {
 </script>
 ```
 
-### cdn 使用方式(在 demo 文件夹里面使用 live server 启动就可以了)
+### cdn 使用方式
+
+> 可以去代码仓库调试 (在 demo 文件夹里面使用 live server 启动就可以了)
 
 ```html
 <!DOCTYPE html>
@@ -42,7 +48,7 @@ export default {
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.min.js"></script>
-    <script src="../dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-count-to-vite@0.0.7/dist/index.umd.min.js"></script>
     <div id="app">
       <count-to :end-value="200"></count-to>
     </div>

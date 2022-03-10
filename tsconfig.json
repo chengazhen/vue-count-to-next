@@ -2,8 +2,8 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES6",
+    "module": "ES6",
     "moduleResolution": "node",
     "declaration": true,
     "declarationDir": "types",
@@ -14,11 +14,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": ".",
+    "isolatedModules": true,
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./src/components/*"]
     },
-    "lib": ["esnext", "dom"]
+    "lib": ["ES2016", "dom"]
   },
   "references": [
     {
