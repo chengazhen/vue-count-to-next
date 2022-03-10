@@ -229,9 +229,4 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("span", null, toDisplayString(_ctx.displayValue), 1);
 }
 var CountTo = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-var index = {
-  install(app) {
-    app.component("CountTo", CountTo);
-  }
-};
-export { index as default };
+export { CountTo as default };

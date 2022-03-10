@@ -1,6 +1,6 @@
 {
   "name": "vue-count-to-vite",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "files": [
     "dist",
     "types"
@@ -36,5 +36,10 @@
     "vite-plugin-dts": "^0.9.9",
     "vue-tsc": "^0.31.4"
   },
-  "types": "./types/src/index.d.ts"
+  "types": "./types/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azhen98/vue-count-to-next"
+  },
+  "license": "MIT"
 }

@@ -1,4 +1,2 @@
-declare const _default: {
-  install(app: import('vue').App<any>): void
-}
-export default _default
+import CountTo from "./CountTo";
+export default CountTo;
