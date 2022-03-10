@@ -29,6 +29,34 @@ export default {
 </script>
 ```
 
+### cdn 使用方式(在 demo 文件夹里面使用 live server 启动就可以了)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.min.js"></script>
+    <script src="../dist/index.umd.js"></script>
+    <div id="app">
+      <count-to :end-value="200"></count-to>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        setup(props) {}
+      })
+      app.component('CountTo', CountTo)
+      app.mount('#app')
+    </script>
+  </body>
+</html>
+```
+
 demo:
 
 ![demo](https://github.com/PanJiaChen/vue-countTo/blob/master/countDemo.gif)
