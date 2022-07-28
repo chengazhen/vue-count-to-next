@@ -114,8 +114,9 @@ const _sfc_main = defineComponent({
     const isNumber = (val) => {
       return !isNaN(parseFloat(val));
     };
-    const formatNumber = (num = 0, decimals = 0) => {
-      const numString = num.toFixed(decimals);
+    const formatNumber = (num = 0) => {
+      let numString = num.toFixed(props.decimals);
+      numString += "";
       const x = numString.split(".");
       let x1 = x[0];
       const x2 = x.length > 1 ? props.decimal + x[1] : "";

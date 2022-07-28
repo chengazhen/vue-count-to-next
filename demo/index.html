@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <style>
-      #app {
-        text-align: center;
-        font-size: 32px;
-      }
-      .count {
-        min-width: 300px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <div class="count">
-        <count-to
-          ref="countTo"
-          :end-val="6000"
-          :autoplay="false"
-          :start-val="20"
-        ></count-to>
-      </div>
-      <button @click="start">开始</button>
-      <button @click="pause">暂停</button>
-    </div>
 
-    <!-- 使用 esmodule 导入 -->
-    <!-- <script type="importmap">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <style>
+    #app {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .count {
+      min-width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="count">
+      <count-to ref="countTo" :end-val="600.20" :autoplay="true" :start-val="20" :decimals="2"></count-to>
+    </div>
+    <button @click="start">开始</button>
+    <button @click="pause">暂停</button>
+  </div>
+
+  <!-- 使用 esmodule 导入 -->
+  <!-- <script type="importmap">
       {
         "imports": {
           "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
@@ -47,40 +45,41 @@
       app.mount('#app')
     </script> -->
 
-    <!-- 常用方式 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.min.js"></script>
-    <script src="./index.umd.js"></script>
-    <script>
-      const app = Vue.createApp({
-        setup(props) {
-          const countTo = Vue.ref(null)
-          const status = Vue.ref(false)
-          const pause = () => {
-            if (!status.value) {
-              return
-            }
-            status.value = false
-            countTo.value.pause()
+  <!-- 常用方式 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.2.31/dist/vue.global.min.js"></script>
+  <script src="../dist/index.umd.js"></script>
+  <script>
+    const app = Vue.createApp({
+      setup(props) {
+        const countTo = Vue.ref(null)
+        const status = Vue.ref(false)
+        const pause = () => {
+          if (!status.value) {
+            return
           }
-
-          const start = () => {
-            if (status.value) {
-              return
-            }
-            status.value = true
-            countTo.value.start()
-          }
-
-          return {
-            pause,
-            countTo,
-            start,
-            status
-          }
+          status.value = false
+          countTo.value.pause()
         }
-      })
-      app.component('CountTo', CountTo)
-      app.mount('#app')
-    </script>
-  </body>
+
+        const start = () => {
+          if (status.value) {
+            return
+          }
+          status.value = true
+          countTo.value.start()
+        }
+
+        return {
+          pause,
+          countTo,
+          start,
+          status
+        }
+      }
+    })
+    app.component('CountTo', CountTo)
+    app.mount('#app')
+  </script>
+</body>
+
 </html>

@@ -114,8 +114,9 @@ export default defineComponent({
     }
 
     // 格式化数据 增加前缀、后缀、
-    const formatNumber = (num = 0, decimals = 0): string => {
-      const numString = num.toFixed(decimals)
+    const formatNumber = (num = 0): string => {
+      let  numString = num.toFixed(props.decimals)
+      numString += '';
       const x = numString.split('.')
       let x1 = x[0] // 整数部分
       const x2 = x.length > 1 ? props.decimal + x[1] : '' // 小数部分
@@ -128,8 +129,9 @@ export default defineComponent({
       }
       return props.prefix + x1 + x2 + props.suffix
     }
-
+    
     const displayValue = ref<string>(formatNumber(props.startVal)) // 具体显示的格式化后的字符串
+    
     let startTime = 0 // 开始时间
     let remaining = 0 // 剩余时间
     let localDuration = props.duration || 3000 // 本地持续时间
