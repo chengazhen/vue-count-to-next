@@ -19,7 +19,6 @@ function useRequestAnimationFrame() {
 
     requestAnimationFrame = window.requestAnimationFrame
     cancelAnimationFrame = window.cancelAnimationFrame
-    console.log(typeof requestAnimationFrame);
 
     // 通过遍历各浏览器前缀，来得到requestAnimationFrame和cancelAnimationFrame在当前浏览器的实现形式
     if (typeof requestAnimationFrame !== 'function' && typeof cancelAnimationFrame !== 'function') {

@@ -14,7 +14,6 @@ function useRequestAnimationFrame() {
   } else {
     requestAnimationFrame = window.requestAnimationFrame;
     cancelAnimationFrame = window.cancelAnimationFrame;
-    console.log(typeof requestAnimationFrame);
     if (typeof requestAnimationFrame !== "function" && typeof cancelAnimationFrame !== "function") {
       requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
       cancelAnimationFrame = window.mozCancelAnimationFrame || window.cancelRequestAnimationFrame;
